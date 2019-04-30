@@ -1,0 +1,56 @@
+﻿@model Perficient.ViewModels.ClientViewModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4 text-center">
+        <h2>Register</h2>
+        <br />
+        <p>Please select a type of registration:</p>
+        <p>@Html.ActionLink("Client", "Register", "Clients", null, new { @class = "btn btn-primary" })@Html.ActionLink("Attendee", "Register", "Attendees", null, new { @class = "btn btn-default" })</p>
+        <br />
+        @using (Html.BeginForm("Register", "Clients"))
+        {
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m => m.Name) })
+                @Html.ValidationMessageFor(m => m.Name)
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.Street, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m => m.Street) })
+                @Html.ValidationMessageFor(m => m.Street)
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.City, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m => m.City) })
+                @Html.ValidationMessageFor(m => m.City)
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.State, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m => m.State) })
+                @Html.ValidationMessageFor(m => m.State)
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.ZipCode, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m => m.ZipCode) })
+                @Html.ValidationMessageFor(m => m.ZipCode)
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m => m.Email) })
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", placeholder = @Html.DisplayNameFor(m => m.Phone) })
+                @Html.ValidationMessageFor(m => m.Phone)
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        }
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

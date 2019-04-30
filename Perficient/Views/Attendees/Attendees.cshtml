@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Attendees";
+}
+
+<div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8 text-center">
+        <h2>Attendees</h2>
+        <br />
+        <h5>See who has already registered for the Perficient Client Conference</h5>
+        <br />
+        @Html.Partial("_RegisteredAttendees")
+        <p>
+            @Html.ActionLink("Register", "Register", null, new { @class = "btn btn-primary" })
+        </p>
+    </div>
+    <div class="col-md-2">
+    </div>
+</div>
+
